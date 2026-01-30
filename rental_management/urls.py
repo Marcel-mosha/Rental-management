@@ -22,7 +22,18 @@ from rest_framework.authtoken.views import obtain_auth_token
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/', include('rentals.urls')),
+    
+    # Modular API endpoints
+    path('api/accounts/', include('accounts.urls')),
+    path('api/localities/', include('localities.urls')),
+    path('api/properties/', include('properties.urls')),
+    path('api/leases/', include('leases.urls')),
+    path('api/payments/', include('payments.urls')),
+    path('api/maintenance/', include('maintenance.urls')),
+    path('api/reviews/', include('reviews.urls')),
+    path('api/notifications/', include('notifications.urls')),
+    
+    # Authentication
     path('api/auth/', include('rest_framework.urls')),
     path('api/token/', obtain_auth_token, name='api_token_auth'),
 ]

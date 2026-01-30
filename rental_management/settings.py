@@ -49,8 +49,15 @@ INSTALLED_APPS = [
     'django_filters',
     'corsheaders',
     
-    # Local apps
-    'rentals',
+    # Local apps - Modular structure
+    'accounts',           # User management & authentication
+    'localities',         # Location data
+    'properties',         # Properties and rental units
+    'leases',             # Lease agreements
+    'payments',           # Payment processing
+    'maintenance',        # Maintenance requests
+    'reviews',            # Review system
+    'notifications',      # Notification system
 ]
 
 MIDDLEWARE = [
@@ -169,7 +176,7 @@ REST_FRAMEWORK = {
 }
 
 # Custom User Model
-AUTH_USER_MODEL = 'rentals.User'
+AUTH_USER_MODEL = 'accounts.User'
 
 # CORS settings (for development)
 CORS_ALLOW_ALL_ORIGINS = True  # Change to specific origins in production
